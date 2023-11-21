@@ -11,7 +11,13 @@ import mindustry.net.Administration.*;
 import mindustry.world.blocks.storage.*;
 
 public class ExamplePlugin extends Plugin{
-
+    @Override
+    public void init(){
+        Events.on(PlayerConnect.class,event -> {
+            Player player =
+        event.player;
+        player.setTeam(Team.derelict);
+        });
     //called when game initializes
     @Override
     public void init(){
