@@ -17,7 +17,8 @@ public class ExamplePlugin extends Plugin{
             Player player =
         event.player;
         player.setTeam(Team.derelict);
-        });
+        }
+    });
     //called when game initializes
     @Override
     public void init(){
