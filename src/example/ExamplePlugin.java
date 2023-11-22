@@ -2,10 +2,12 @@ package example;
 
 import arc.*;
 import arc.util.*;
+import arc.Events;
 import mindustry.*;
 import mindustry.content.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
+import mindustry.gen.Player;
 import mindustry.mod.*;
 import mindustry.net.Administration.*;
 import mindustry.world.blocks.storage.*;
@@ -16,8 +18,7 @@ public class ExamplePlugin extends Plugin{
     @Override
     public void init(){
          Events.on(PlayerConnect.class,event -> {
-            Player player =
-        event.player;
+            Player player = event.player;
         player.setTeam(Team.derelict);
         });
         //listen for a block selection event
