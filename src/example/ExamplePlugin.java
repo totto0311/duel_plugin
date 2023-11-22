@@ -9,19 +9,17 @@ import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.net.Administration.*;
 import mindustry.world.blocks.storage.*;
+import mindustry.game.Team;
 
 public class ExamplePlugin extends Plugin{
+    //called when game initializes
     @Override
     public void init(){
-        Events.on(PlayerConnect.class,event -> {
+         Events.on(PlayerConnect.class,event -> {
             Player player =
         event.player;
         player.setTeam(Team.derelict);
         });
-    }
-    //called when game initializes
-    @Override
-    public void init(){
         //listen for a block selection event
         Events.on(BuildSelectEvent.class, event -> {
             if(!event.breaking && event.builder != null && event.builder.buildPlan() != null && event.builder.buildPlan().block == Blocks.thoriumReactor && event.builder.isPlayer()){
