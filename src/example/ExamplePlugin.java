@@ -19,7 +19,7 @@ public class ExamplePlugin extends Plugin{
     public void init(){
          Events.on(PlayerConnect.class,event -> {
             Player player = event.player;
-        player.setTeam(Team.derelict);
+        Call.setPlayerTeamEditor(player, team.derelict.get(player));
         });
         //listen for a block selection event
         Events.on(BuildSelectEvent.class, event -> {
